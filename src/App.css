@@ -1,0 +1,344 @@
+/* @import url(""); */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap");
+
+.App {
+  text-align: center;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  /* overflow: hidden; */
+}
+
+.siteWrapper {
+  /* position: inherit; */
+  display: flex;
+  flex-direction: column;
+  z-index: -100;
+}
+
+.overlay {
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  /* height: 800px; */
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+  /* border: 10px solid red; */
+}
+
+.frontpage {
+  display: flex;
+}
+
+.roadMap {
+  position: relative;
+  /* border: 10px solid green; */
+  /* background: #333333; */
+  height: 600px;
+  /* margin-bottom: 80px; */
+  /* top: 400px; */
+}
+
+.specs {
+  position: relative;
+  /* border: 10px solid green; */
+  height: 450px;
+  font-size: 18px;
+}
+
+/* .moving-background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("./assets/background/forest.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 40% 40%;
+  border: 10px solid blue;
+} */
+
+.moving-background {
+  /* z-index: -1; */
+  z-index: 10000;
+  position: relative;
+  height: 870px;
+  /* background-image: url("./assets/background/forest.gif"); */
+  background-image: url("./assets/images/BeFunky-collage1.png");
+  /* background-color: black; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 40% 40%;
+}
+
+.text-surrounding {
+  /* border: 10px solid white; */
+}
+
+.parentOfBorderParagraph {
+  display: grid;
+  place-items: center;
+  /* height: 100vh; */
+}
+/* overflow: hidden; */
+.borderParagraph {
+  text-align: center;
+  /* font-family: cursive; */
+  font-size: 15px;
+  border: 6px solid black;
+  margin: 10px;
+  /* padding: 2rem 1rem; */
+  /* min-height: 3em;
+  width: 60%; */
+  resize: both;
+  background: linear-gradient(
+    to top,
+    rgba(#cffffe, 0.3),
+    rgba(#f9f7d9, 0.3),
+    rgba(#fce2ce, 0.3),
+    rgba(#ffc1f3, 0.3)
+  );
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23cffffe' /%3E%3Cstop offset='25%25' stop-color='%23f9f7d9' /%3E%3Cstop offset='50%25' stop-color='%23fce2ce' /%3E%3Cstop offset='100%25' stop-color='%23ffc1f3' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3'/%3E %3C/svg%3E")
+    1;
+}
+
+.iicon {
+  z-index: -100;
+}
+
+.logo {
+  background-color: black;
+  border-radius: 5%;
+  flex: 1;
+}
+.frontpagebt {
+  /* border: 2px solid white; */
+  flex: 10;
+}
+
+.buyItSectionParent {
+  /* height: 100%; */
+  background-color: black;
+}
+
+.specsBack {
+  /* background-image: url("./assets/images/BeFunky-collage3.png"); */
+  /* background-image: surl("./assets/images/frunk.png"); */
+  /* background-size: 70%; */
+  /* background-color: #cccccc; */
+  background-color: black;
+}
+
+.footteer {
+  /* border: 2px solid red; */
+  position: relative;
+  background-color: rgba(167, 126, 168, 0.7);
+}
+.sect {
+  padding-bottom: 100px;
+  background: black;
+  font-size: 18px;
+}
+
+.mainMintDiv {
+  /* border: 2px solid white; */
+  /* padding: 8%; */
+  /* background-color: rgba(167, 126, 168, 0.7); */
+  /* background-color: rgba(162, 65, 165, 0.7); */
+  background-color: rgba(124, 108, 189, 0.92);
+  padding: 2%;
+  margin-top: 1%;
+  display: inline-block;
+  border-radius: 5%;
+}
+
+.mainMintDiv > h1 {
+  font-weight: "950";
+  border: "10px solid yellow";
+}
+
+.mintButtons {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid white; */
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.plusMinusSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+}
+
+.minusButton {
+  color: white;
+  height: 50px;
+  width: 45px;
+  background: black;
+  font-size: 30px;
+  border-radius: 15%;
+}
+
+.plusButton {
+  color: white;
+  height: 50px;
+  width: 45px;
+  background: black;
+  font-size: 30px;
+  border-radius: 15%;
+}
+
+.mintValueClassWrapper {
+  width: 150px;
+  height: 150px;
+  /* border: 3px solid red; */
+  border-radius: 10%;
+  background: rgba(100, 100, 100, 0.7);
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mintValueClass {
+  font-size: 70px;
+  /* border: 2px solid black; */
+  /* padding-bottom: 100px; */
+  /* background: rgb(42, 11, 11);
+  background: radial-gradient(
+    circle,
+    rgba(42, 11, 11, 1) 0%,
+    rgba(93, 8, 110, 1) 19%,
+    rgba(70, 1, 73, 1) 44%,
+    rgba(121, 9, 98, 1) 67%,
+    rgba(103, 17, 122, 1) 91%
+  ); */
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  /* position: absolute; */
+  /* top: 52%;
+  left: 48.5%; */
+  /* width: 100px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+.mintButton {
+  margin: 10px;
+  height: 40px;
+  width: 80px;
+  font-size: 30px;
+  background: rgba(252, 3, 227, 0.7);
+  border-radius: 20%;
+  color: white;
+}
+
+.maxMintButton {
+  margin: 10px;
+  height: 40px;
+  width: 150px;
+  font-size: 30px;
+  border-radius: 20%;
+  background-color: rgba(252, 3, 128, 0.7);
+  color: white;
+}
+
+.connectAlert {
+  padding: 20px;
+  /* background-color: rgba(148, 128, 72, 0.7); */
+
+  background: rgb(110, 4, 87);
+  background: radial-gradient(
+    circle,
+    rgba(110, 4, 87, 1) 27%,
+    rgba(32, 9, 121, 1) 57%,
+    rgba(171, 31, 96, 1) 100%
+  );
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: white;
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 15%;
+}
+
+.sectionDivider {
+  width: 100%;
+  height: 30px;
+  background: black;
+  z-index: 100000;
+}
+
+.titleOfThePage {
+  font-weight: 900;
+}
+
+.mainMintConnectBtn {
+  background: #5834d9;
+  background-image: -webkit-linear-gradient(top, #5834d9, #b82baf);
+  background-image: -moz-linear-gradient(top, #5834d9, #b82baf);
+  background-image: -ms-linear-gradient(top, #5834d9, #b82baf);
+  background-image: -o-linear-gradient(top, #5834d9, #b82baf);
+  background-image: linear-gradient(to bottom, #5834d9, #b82baf);
+  -webkit-border-radius: 19;
+  -moz-border-radius: 19;
+  border-radius: 19px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 30px;
+  padding: 10px 20px 10px 20px;
+  /* border: solid #c1d9e8 1px; */
+  text-decoration: none;
+}
+
+.mainMintConnectBtn:hover {
+  background: #f93cfc;
+  background-image: -webkit-linear-gradient(top, #f93cfc, #e100ff);
+  background-image: -moz-linear-gradient(top, #f93cfc, #e100ff);
+  background-image: -ms-linear-gradient(top, #f93cfc, #e100ff);
+  background-image: -o-linear-gradient(top, #f93cfc, #e100ff);
+  background-image: linear-gradient(to bottom, #f93cfc, #e100ff);
+  text-decoration: none;
+}
+
+.mintButtonwl {
+  margin: 10px;
+  height: 40px;
+  width: 250px;
+  font-size: 30px;
+  background: rgba(252, 3, 227, 0.7);
+  border-radius: 20%;
+  color: white;
+}
+
+.maxMintButtonwl {
+  margin: 10px;
+  height: 40px;
+  width: 250px;
+  font-size: 30px;
+  background: rgba(252, 3, 227, 0.7);
+  border-radius: 20%;
+  color: white;
+}
