@@ -33,7 +33,8 @@ const Specs = ({}) => {
         {/* <img src="https://ipfs.io/ipfs/QmSsnai5auAVjRGgAqcwJhMQqh66AGxb2wYpiPwzV6RGcG/1400.png" height="150px" width="150px"/> */}
 
         {/* <img src={require('./assets/images/metisLogo.jpeg')} height="150px" width="150px"/> */}
-        <Image src={require('./assets/images/1400.png')} height="190px" width="190px"></Image>
+        {/* <Image src={require('./assets/images/1400.png')} height="190px" width="190px"></Image> */}
+        <Image src="https://somespace.fra1.cdn.digitaloceanspaces.com/1400.png" height="190px" width="190px"></Image>
         <UnorderedList styleType="none">
             <ListItem>Name: LA</ListItem>
             <ListItem>Background: Mustard</ListItem>

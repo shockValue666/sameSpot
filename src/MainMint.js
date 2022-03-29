@@ -121,8 +121,9 @@ const MainMint = ({accounts,setAccounts}) => {
 
     return (<div className="mainMintDiv">
         <h2>{whiteListedUser? (<div> {splitAddress(whiteListedUser)}  you are whitelisted</div>):regularUser?(<div> {splitAddress(regularUser)}</div>):(<div></div>)}</h2>
-        <h1 className="titleOfThePage" style={{letterSpacing:"2px",fontSize:"48px",color:"rgb(33, 27, 36)"}}>👁 Metis ApeWives 👁</h1>
-        <h2>Mint is LIVE <CgArrowLongDownL/> <CgArrowLongDownL/> <CgArrowLongDownL/>   </h2>
+        {/* <h1 className="titleOfThePage" style={{letterSpacing:"2px",fontSize:"48px",color:"rgb(33, 27, 36)"}}>👁 Metis ApeWives 👁</h1> */}
+        <h1 className="titleOfThePage" style={{letterSpacing:"2px",fontSize:"48px",color:"rgb(33, 27, 36)",fontStyle:"normal"}}>👁</h1>
+        {/* <h2>Mint is LIVE <CgArrowLongDownL/> <CgArrowLongDownL/> <CgArrowLongDownL/>   </h2> */}
         <p></p>
 
         {

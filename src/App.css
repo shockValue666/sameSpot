@@ -75,7 +75,8 @@ body {
   position: relative;
   height: 870px;
   /* background-image: url("./assets/background/forest.gif"); */
-  background-image: url("./assets/images/BeFunky-collage1.png");
+  /* background-image: url("./assets/images/BeFunky-collage1.png"); */
+  background-image: url("https://somespace.fra1.cdn.digitaloceanspaces.com/BeFunky-collage1.png");
   /* background-color: black; */
   background-size: cover;
   background-repeat: no-repeat;
@@ -157,7 +158,8 @@ body {
   /* padding: 8%; */
   /* background-color: rgba(167, 126, 168, 0.7); */
   /* background-color: rgba(162, 65, 165, 0.7); */
-  background-color: rgba(124, 108, 189, 0.92);
+  /* background-color: rgba(124, 108, 189, 0.92); */
+  background-color: black;
   padding: 2%;
   margin-top: 1%;
   display: inline-block;

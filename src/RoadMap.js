@@ -31,7 +31,8 @@ const RoadMap = ({}) => {
                 </Center>
                 <Square bg='#000000' flex='33.3333333'>
                     <Text>
-                        <Image src={require('./assets/images/newerroadmap.jpg')}></Image>
+                        {/* <Image src={require('./assets/images/newerroadmap.jpg')}></Image> */}
+                        <Image src="https://somespace.fra1.cdn.digitaloceanspaces.com/newerroadmap.jpg"></Image>
                     </Text>
                 </Square>
                 <Center flex='33.3333333' bg='#000000'>
