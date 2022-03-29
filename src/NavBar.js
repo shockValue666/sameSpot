@@ -54,7 +54,8 @@ const NavBar = ({accounts,setAccounts}) => {
     return (
             <div className="frontpage">
             {/* <Image src={require('./assets/images/LogoMakr(3).png')}  width="100px" marginLeft="10px" height="162px" margin="0px 10px" className="logo" /> */}
-            <Image src={require('./assets/images/LogoMakr(3).png')}   marginLeft="10px" height="170px"  margin="0px 10px" className="logo" />
+            {/* <Image src={require('./assets/images/LogoMakr(3).png')}   marginLeft="10px" height="170px"  margin="0px 10px" className="logo" /> */}
+            <Image src="https://somespace.fra1.cdn.digitaloceanspaces.com/LogoMakr%283%29.png"   marginLeft="10px" height="170px"  margin="0px 10px" className="logo" />
             <div className="frontpagebt">
     <Flex justify="space-between" align="center"  padding="10px" backgroundColor="rgba(0, 0, 0, 0.5)" borderRadius="10%" >
         {/*left side - social media */}
@@ -67,13 +68,16 @@ const NavBar = ({accounts,setAccounts}) => {
                 <Image src={require('./assets/images/metisLogo.jpeg')} className="" borderRadius="29%" boxSize="42px" margin="0 15px"/>
                 </Link> */}
             <Link href="https://discord.gg/pcj4SmWfdf" target="_blank">
-                <Image src={Discord} boxSize="52px" margin="0 15px" />
+                {/* <Image src={Discord} boxSize="52px" margin="0 15px" /> */}
+                <Image src={"https://somespace.fra1.cdn.digitaloceanspaces.com/icons8-discord-bubble-48.png"} boxSize="52px" margin="0 15px" />
             </Link>
             <Link href="https://twitter.com/ApewivesM" target="_blank">
-                <Image src={Twitter} boxSize="52px" margin="0 15px" />
+                {/* <Image src={Twitter} boxSize="52px" margin="0 15px" /> */}
+                <Image src="https://somespace.fra1.cdn.digitaloceanspaces.com/icons8-twitter-48.png" boxSize="52px" margin="0 15px" />
             </Link>
             <Link href="https://www.google.com">
-                <Image src={Telegram} boxSize="52px" margin="0 15px" />
+                {/* <Image src={Telegram} boxSize="52px" margin="0 15px" /> */}
+                <Image src="https://somespace.fra1.cdn.digitaloceanspaces.com/icons8-telegram-app-48.png" boxSize="52px" margin="0 15px" />
             </Link>
         </Flex>
 
