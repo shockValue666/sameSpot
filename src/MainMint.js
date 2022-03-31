@@ -3,21 +3,13 @@ import {useState,useEffect} from 'react';
 import {ethers,BigNumber} from 'ethers';
 import roboPunksNFT from './RoboPunksNFT.json'
 import {FaMinusCircle,FaPlusCircle} from 'react-icons/fa'
-import {CgArrowLongDownL}  from "react-icons/cg";
-import {EmailIcon} from "@chakra-ui/icons"
 import whiteListedAddresses from './assets/whiteListAddresses.json'
-import {
-    Alert,
-    Button,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-  Center
-} from '@chakra-ui/react'
+const { MerkleTree } = require('merkletreejs');
+const keccak256 = require('keccak256');
+window.Buffer = window.Buffer || require("buffer").Buffer
 
-const roboPunksNFTAddress="0x3448bD4D548c0F6e4C3Ce658340CD7Dc5638d15F";
+
+const roboPunksNFTAddress="0xf8864e6FCD3B8f925B69314B9F8aC2A461f90a14";
 
 
 
@@ -30,27 +22,29 @@ const MainMint = ({accounts,setAccounts}) => {
 
     const isConnected = Boolean(accounts[0]);
 
+    const leafNodes = whiteListedAddresses.map(addr=>keccak256(addr))
+    const merkleTree = new MerkleTree(leafNodes,keccak256,{sortPairs:true});
+
     async function connectAccount(){
         if(window.ethereum){
             const accounts = await window.ethereum.request({
                 method:"eth_requestAccounts",
             })
 
-            const switchNetwork = await window.ethereum.request({
-                method:"wallet_addEthereumChain",
-                params:[{
-                    chainId:`0x${Number(1088).toString(16)}`,
-                    rpcUrls:["https://andromeda.metis.io/?owner=1088"],
-                    chainName:"Metis Network",
-                    nativeCurrency:{
-                        name:"Metis",
-                        symbol:"METIS",
-                        decimals:18
-                    },
-                    blockExplorerUrls:["https://andromeda-explorer.metis.io/"]
-                }]
-            })
-
+            // const switchNetwork = await window.ethereum.request({
+            //     method:"wallet_addEthereumChain",
+            //     params:[{
+            //         chainId:`0x${Number(1088).toString(16)}`,
+            //         rpcUrls:["https://andromeda.metis.io/?owner=1088"],
+            //         chainName:"Metis Network",
+            //         nativeCurrency:{
+            //             name:"Metis",
+            //             symbol:"METIS",
+            //             decimals:18
+            //         },
+            //         blockExplorerUrls:["https://andromeda-explorer.metis.io/"]
+            //     }]
+            // })
             setAccounts(accounts)
             setIndicator(true)
         }else{
@@ -69,8 +63,13 @@ const MainMint = ({accounts,setAccounts}) => {
                 roboPunksNFT.abi,
                 signer
             )
+            const claimingAddress = keccak256(accounts[0])
+            const hexProof = merkleTree.getHexProof(claimingAddress);
             try{
-                const response = await contract.mint(BigNumber.from(mintAmount));
+                const response = await contract.whitelistMint(hexProof,BigNumber.from(mintAmount),{
+                    value:ethers.utils.parseEther(0.000000015.toString())
+                    // 0.000000015
+                });
                 console.log('response: ',response)
             }catch(err){
                 console.log("error: " ,err)
@@ -111,6 +110,8 @@ const MainMint = ({accounts,setAccounts}) => {
             }
         }
     },[accounts])
+
+    
     const splitAddress = (address) => {
         const totalCharacters = address.length;
         const firstThreeChars = address.substring(0,3);
@@ -144,7 +145,7 @@ const MainMint = ({accounts,setAccounts}) => {
                             </button>
                         </div>
                         {whiteListedUser?(<div className="mintButtons">
-                            <button className="mintButtonwl" onClick={handleWhitelistMint}>WL mint</button>
+                            <button className="mintButtonwl" onClick={handleMint}>WL mint</button>
                             <button className="maxMintButtonwl" onClick={handleMaxWhitelistMint}>WL max mint</button>
                             <h3>WL mint price per NFT: 0.1 $METIS</h3>
                             <h3>WL maximum NFTs per wallet: 15</h3>
